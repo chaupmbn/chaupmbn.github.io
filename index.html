@@ -1,0 +1,1215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Minh-Chau (James) Pham</title>
+<meta name="description" content="Minh-Chau (James) Pham, MA student in Economics at the University of Saskatchewan. Research on immigrant labour market outcomes, returns to education and earnings inequality.">
+<meta property="og:title" content="Minh-Chau (James) Pham">
+<meta property="og:description" content="MA student in Economics at the University of Saskatchewan. Research on immigrant labour market outcomes, returns to education and earnings inequality.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#f2f5f1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='6' fill='%231d5c45'/%3E%3Ctext x='32' y='41' font-family='Georgia,serif' font-size='23' font-style='italic' text-anchor='middle' fill='%23f4f7f3'%3EMCP%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&display=swap">
+<style>
+/* Layout: a left rail (portrait, contact, sticky contents) beside one reading
+   column that opens like a working paper's title page. Phones stack it all. */
+:root {
+  /* Color: library green on cool paper, brass for distinctions */
+  --paper: #f2f5f1;
+  --sheet: #fbfcfa;
+  --panel: #e4ebe3;
+  --rule: #cbd6c9;
+  --ink: #13201a;
+  --ink-soft: #34453b;
+  --muted: #5a695f;
+  --accent: #1d5c45;
+  --accent-soft: #dbe8df;
+  --brass: #7a5c14;
+  --brass-soft: #f0e7cf;
+  --on-accent: #f4f7f3;
+
+  /* Type: Newsreader for names and reading, Plex Sans for interface, Plex Mono for codes and dates */
+  --serif: "Newsreader", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --sans: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --fs-label: 0.75rem;
+  --fs-small: 0.875rem;
+  --fs-body: 1.125rem;
+  --fs-lede: clamp(1.1875rem, 1.05rem + 0.5vw, 1.375rem);
+  --fs-title: 1.25rem;
+  --fs-h2: clamp(2.125rem, 1.7rem + 1.6vw, 2.875rem);
+  --fs-h1: clamp(2.75rem, 1.2rem + 4.6vw, 4.75rem);
+
+  --rail: 13.5rem;
+  --measure: 40rem;
+
+  /* Always light, whatever the visitor's system setting */
+  color-scheme: light;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0 0 auto;
+  height: env(safe-area-inset-top, 0px);
+  z-index: 10;
+  background: var(--paper);
+}
+
+h1, h2, h3, h4 { margin: 0; font-weight: 500; text-wrap: balance; }
+p, ol, ul, dl, dd { margin: 0; }
+ol, ul { padding: 0; list-style: none; }
+p { text-wrap: pretty; }
+cite { font-style: italic; }
+abbr[title] { text-decoration: none; }
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+a:hover { color: var(--ink); }
+
+button {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.skip {
+  position: absolute;
+  top: -4rem;
+  left: max(16px, env(safe-area-inset-left, 0px));
+  z-index: 40;
+  padding: 0.5rem 0.8rem;
+  background: var(--ink);
+  color: var(--paper);
+  font-weight: 600;
+  text-decoration: none;
+}
+.skip:focus { top: calc(env(safe-area-inset-top, 0px) + 0.5rem); }
+
+/* Phone and tablet header */
+.topbar {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 5;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.35rem 1.5rem;
+  padding-block: 0.75rem;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  border-bottom: 1px solid var(--rule);
+  background: var(--paper);
+}
+@supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
+  .topbar {
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+  }
+}
+
+.brand {
+  color: var(--ink);
+  font: 500 1.25rem/1.2 var(--serif);
+  letter-spacing: -0.01em;
+  text-decoration: none;
+}
+
+.topnav {
+  display: flex;
+  gap: 1.25rem;
+  max-width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.topnav::-webkit-scrollbar { display: none; }
+.topnav a {
+  flex: none;
+  padding-block: 0.1rem;
+  border-bottom: 1px solid transparent;
+  color: var(--ink-soft);
+  font: 500 0.875rem/1.5 var(--sans);
+  text-decoration: none;
+}
+.topnav a:hover { color: var(--accent); }
+.topnav a[aria-current="true"] {
+  border-bottom-color: currentColor;
+  color: var(--accent);
+}
+
+/* Shell and rail */
+.shell {
+  max-width: 76rem;
+  margin-inline: auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+.rail {
+  display: grid;
+  grid-template-columns: 5.5rem minmax(0, 1fr);
+  gap: 1.25rem;
+  align-items: start;
+  padding-block: 1.75rem 0;
+}
+.rail-sticky { display: none; }
+
+.portrait {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  background: var(--panel);
+}
+
+.contact-list {
+  display: grid;
+  gap: 0.55rem;
+  align-content: start;
+  font-size: var(--fs-small);
+  line-height: 1.45;
+}
+.contact-list div {
+  display: grid;
+  grid-template-columns: 5rem minmax(0, 1fr);
+  gap: 0.6rem;
+  align-items: baseline;
+}
+.contact-list dd { min-width: 0; overflow-wrap: anywhere; color: var(--ink-soft); }
+.contact-list a { color: var(--ink-soft); text-decoration: none; }
+.contact-list a:hover { color: var(--accent); text-decoration: underline; }
+.inline-links { display: flex; flex-wrap: wrap; gap: 0.1rem 0.8rem; }
+.mono { font-family: var(--mono); font-size: 0.8125rem; }
+
+/* Shared label voice */
+.label,
+.sub,
+.toc-label,
+.contact-list dt,
+.frontmatter dt {
+  color: var(--muted);
+  font: 600 var(--fs-label)/1.4 var(--sans);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Contents (desktop rail) */
+.toc { display: grid; gap: 0.6rem; }
+.toc ol { display: grid; }
+.toc a {
+  position: relative;
+  display: block;
+  padding: 0.28rem 0 0.28rem 1.6rem;
+  color: var(--muted);
+  font: 400 1.125rem/1.3 var(--serif);
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+.toc a::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 1.05rem;
+  height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 220ms ease;
+}
+.toc a:hover,
+.toc a[aria-current="true"] { color: var(--ink); }
+.toc a[aria-current="true"]::before { transform: scaleX(1); }
+
+/* Buttons */
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 2.75rem;
+  padding: 0.6rem 1.1rem;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  background: transparent;
+  color: var(--ink);
+  font: 600 0.875rem/1.2 var(--sans);
+  text-decoration: none;
+  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+.button:hover { border-color: var(--ink); color: var(--ink); }
+.button--primary {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--on-accent);
+}
+.button--primary:hover {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+}
+
+/* Title page */
+main { min-width: 0; }
+
+.hero {
+  display: grid;
+  gap: 2rem;
+  padding-block: 2rem 0;
+}
+.hero-head {
+  display: grid;
+  gap: 0.8rem;
+  justify-items: start;
+}
+.eyebrow {
+  color: var(--accent);
+  font: 600 var(--fs-label)/1.4 var(--sans);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+h1 {
+  margin-block: 0.1em 0.05em;
+  color: var(--ink);
+  font: 400 var(--fs-h1)/1 var(--serif);
+  letter-spacing: -0.03em;
+}
+h1 .aka {
+  color: var(--muted);
+  font-style: italic;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+}
+.role {
+  color: var(--ink-soft);
+  font: italic 400 var(--fs-lede)/1.35 var(--serif);
+}
+
+.abstract {
+  display: grid;
+  gap: 0.8rem;
+  max-width: var(--measure);
+}
+.lede {
+  color: var(--ink-soft);
+  font: 400 var(--fs-lede)/1.55 var(--serif);
+}
+
+.frontmatter {
+  display: grid;
+  gap: 0.6rem;
+  max-width: var(--measure);
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rule);
+}
+.frontmatter div {
+  display: grid;
+  grid-template-columns: 6.5rem minmax(0, 1fr);
+  gap: 0.25rem 1rem;
+  align-items: baseline;
+}
+.codes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 1rem;
+  color: var(--ink);
+  font: 400 0.9375rem/1.5 var(--mono);
+}
+.codes abbr {
+  border-bottom: 1px dotted var(--muted);
+  cursor: help;
+}
+.keywords {
+  color: var(--ink-soft);
+  font: italic 400 1.0625rem/1.5 var(--serif);
+}
+
+.actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+
+/* Sections */
+.section { padding-top: clamp(4rem, 2.5rem + 5vw, 7rem); }
+.section-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  margin-bottom: 2.25rem;
+}
+.section-head h2 {
+  font: 400 var(--fs-h2)/1.05 var(--serif);
+  letter-spacing: -0.02em;
+}
+.head-link {
+  font: 600 0.875rem/1.4 var(--sans);
+  text-decoration: none;
+}
+.head-link:hover { text-decoration: underline; }
+.section-body { display: grid; gap: 3.25rem; }
+.sub { margin-bottom: 1.25rem; }
+
+/* Featured paper */
+.featured {
+  display: grid;
+  gap: 0.9rem;
+  padding: clamp(1.25rem, 0.6rem + 2.6vw, 2.5rem);
+  border: 1px solid var(--rule);
+  background: var(--sheet);
+}
+.featured-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.9rem;
+}
+.kicker {
+  color: var(--accent);
+  font: 500 0.75rem/1.3 var(--mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.featured h3 {
+  max-width: 44rem;
+  font: 500 clamp(1.5rem, 1.15rem + 1.4vw, 2.125rem)/1.15 var(--serif);
+  letter-spacing: -0.015em;
+}
+.summary {
+  max-width: var(--measure);
+  color: var(--ink-soft);
+  font: 400 var(--fs-body)/1.6 var(--serif);
+}
+
+/* Paper lists */
+.papers { display: grid; gap: 2rem; }
+.paper { display: grid; gap: 0.3rem; }
+.paper h4 {
+  max-width: var(--measure);
+  font: 500 var(--fs-title)/1.32 var(--serif);
+  letter-spacing: -0.005em;
+}
+.paper h4 a { color: var(--ink); text-decoration: none; }
+.paper h4 a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.14em;
+}
+.authors {
+  max-width: var(--measure);
+  color: var(--ink-soft);
+  font: italic 400 1.0625rem/1.45 var(--serif);
+}
+.authors strong { color: var(--ink); font-weight: 600; }
+.venue {
+  max-width: var(--measure);
+  color: var(--muted);
+  font: 400 1rem/1.6 var(--serif);
+}
+.status {
+  display: inline-block;
+  margin-right: 0.55rem;
+  padding: 0.3rem 0.45rem 0.25rem;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  font: 500 0.6875rem/1 var(--mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  vertical-align: 0.12em;
+}
+.featured-meta .status { margin-right: 0; }
+.status--review { background: var(--accent-soft); color: var(--accent); }
+.status--award { background: var(--brass-soft); color: var(--brass); }
+.status--draft { border-color: var(--muted); color: var(--ink-soft); }
+.status--wip { border-color: var(--muted); border-style: dashed; color: var(--muted); }
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 1.25rem;
+  margin-top: 0.45rem;
+  font: 500 0.875rem/1.5 var(--sans);
+}
+.links a { color: var(--accent); text-decoration: none; }
+.links a:hover { color: var(--ink); text-decoration: underline; }
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+.toggle::after {
+  content: "";
+  width: 0.4rem;
+  height: 0.4rem;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: translateY(-0.12rem) rotate(45deg);
+  transition: transform 160ms ease;
+}
+.toggle[aria-expanded="true"]::after { transform: translateY(0.1rem) rotate(-135deg); }
+.toggle:hover { color: var(--ink); }
+.abstract-text {
+  max-width: var(--measure);
+  margin-top: 0.75rem;
+  padding-left: 1.1rem;
+  border-left: 1px solid var(--rule);
+  color: var(--ink-soft);
+  font: 400 1.0625rem/1.65 var(--serif);
+}
+
+/* Dated rows: presentations, teaching, CV */
+.rows { display: grid; gap: 1.5rem; }
+.row {
+  display: grid;
+  grid-template-columns: 7.5rem minmax(0, 1fr);
+  gap: 0.2rem 1.5rem;
+  align-items: baseline;
+}
+.when {
+  color: var(--muted);
+  font: 400 0.8125rem/1.6 var(--mono);
+  font-variant-numeric: tabular-nums;
+}
+.key {
+  color: var(--muted);
+  font: 600 var(--fs-label)/1.6 var(--sans);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.what { display: grid; gap: 0.15rem; min-width: 0; max-width: var(--measure); }
+.title {
+  color: var(--ink);
+  font: 500 1.1875rem/1.35 var(--serif);
+}
+.where {
+  color: var(--muted);
+  font: 400 0.9375rem/1.5 var(--sans);
+}
+.detail {
+  color: var(--ink-soft);
+  font: 400 1rem/1.55 var(--serif);
+}
+.line {
+  min-width: 0;
+  max-width: var(--measure);
+  color: var(--ink-soft);
+  font: 400 1.0625rem/1.5 var(--serif);
+}
+.aside {
+  max-width: var(--measure);
+  color: var(--muted);
+  font: italic 400 1rem/1.55 var(--serif);
+}
+.block > .aside,
+.references > .aside { margin-top: 1.25rem; }
+
+/* Contact */
+.contact-main {
+  display: grid;
+  gap: 1rem;
+  max-width: var(--measure);
+}
+.email-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 1rem;
+}
+.email {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  color: var(--ink);
+  font: 400 clamp(1.5rem, 1.1rem + 2vw, 2.375rem)/1.15 var(--serif);
+  letter-spacing: -0.01em;
+}
+.copy {
+  padding: 0.35rem 0.7rem;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  color: var(--ink-soft);
+  font: 600 0.8125rem/1.2 var(--sans);
+}
+.copy:hover { border-color: var(--ink); color: var(--ink); }
+.references { margin-top: 3.25rem; }
+.people {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.5rem 3rem;
+}
+.person { display: grid; gap: 0.1rem; }
+.person a {
+  justify-self: start;
+  font: 400 0.9375rem/1.5 var(--sans);
+  text-decoration: none;
+}
+.person a:hover { text-decoration: underline; }
+
+/* Footer */
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  margin-top: clamp(4rem, 3rem + 4vw, 6rem);
+  padding-block: 1.5rem 3rem;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font: 400 0.8125rem/1.5 var(--mono);
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--accent); text-decoration: underline; }
+
+@media (min-width: 560px) {
+  .rail { grid-template-columns: 7rem minmax(0, 1fr); }
+  .people { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 559px) {
+  .row { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 479px) {
+  .frontmatter div { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (min-width: 1000px) {
+  html { scroll-padding-top: 2.5rem; }
+  .topbar { display: none; }
+  .shell {
+    display: grid;
+    grid-template-columns: var(--rail) minmax(0, 1fr);
+    column-gap: clamp(3rem, 7vw, 6.5rem);
+    padding-left: max(40px, env(safe-area-inset-left, 0px));
+    padding-right: max(40px, env(safe-area-inset-right, 0px));
+  }
+  .rail {
+    grid-row: 1 / span 2;
+    display: flex;
+    flex-direction: column;
+    gap: 2.25rem;
+    padding-block: 3.75rem 3rem;
+  }
+  .contact-list { gap: 0.9rem; }
+  .contact-list div { grid-template-columns: minmax(0, 1fr); gap: 0.1rem; }
+  .rail-sticky {
+    position: sticky;
+    top: calc(env(safe-area-inset-top, 0px) + 2.5rem);
+    display: grid;
+    gap: 1.75rem;
+    justify-items: start;
+  }
+  main,
+  .footer { grid-column: 2; }
+  .hero { padding-top: 3.75rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+</style>
+<noscript><style>.abstract-text[hidden] { display: block !important; } .toggle { display: none !important; }</style></noscript>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <a class="brand" href="#about">Minh-Chau Pham</a>
+  <nav class="topnav" aria-label="Sections">
+    <a href="#research">Research</a>
+    <a href="#teaching">Teaching</a>
+    <a href="#cv">CV</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<div class="shell">
+  <aside class="rail" aria-label="Profile">
+    <img class="portrait" src="images/portrait.jpg" alt="Minh-Chau (James) Pham" width="480" height="600">
+
+    <dl class="contact-list">
+      <div>
+        <dt>Location</dt>
+        <dd>Saskatoon, Canada</dd>
+      </div>
+      <div>
+        <dt>Email</dt>
+        <dd><a href="mailto:wzy571@usask.ca">wzy571@usask.ca</a></dd>
+      </div>
+      <div>
+        <dt>ORCID</dt>
+        <dd><a class="mono" href="https://orcid.org/0009-0005-0995-9052" target="_blank" rel="noopener">0009-0005-0995-9052</a></dd>
+      </div>
+      <div>
+        <dt>Profiles</dt>
+        <dd class="inline-links">
+          <a href="https://github.com/chaupmbn" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/minh-chau-pham-98811996" target="_blank" rel="noopener">LinkedIn</a>
+        </dd>
+      </div>
+    </dl>
+
+    <div class="rail-sticky">
+      <nav class="toc" aria-label="Contents">
+        <p class="toc-label">Contents</p>
+        <ol>
+          <li><a href="#about" aria-current="true">About</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#teaching">Teaching</a></li>
+          <li><a href="#cv">CV</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ol>
+      </nav>
+      <a class="button" href="files/cv.pdf" target="_blank" rel="noopener">Download CV <span aria-hidden="true">↗</span></a>
+    </div>
+  </aside>
+
+  <main id="main">
+    <section class="hero" id="about" aria-labelledby="name">
+      <div class="hero-head">
+        <p class="eyebrow">Labour Economics · Applied Econometrics</p>
+        <h1 id="name">Minh-Chau <span class="aka">(James)</span> Pham</h1>
+        <p class="role">MA student, Department of Economics, University of Saskatchewan</p>
+      </div>
+
+      <div class="abstract">
+        <p class="label">Abstract</p>
+        <p class="lede">I am an MA student in Economics at the University of Saskatchewan, and I am also completing an MSc in Financial Engineering at WorldQuant University. I work in labour economics and applied econometrics.</p>
+        <p class="lede">My research studies the labour market outcomes of immigrants, the returns to education and retraining, and earnings inequality. Current projects decompose the immigrant–native wage gap in the United States, examine how ethnic enclaves shape the earnings of Vietnamese immigrants, and compare the returns to completing a credential for immigrant and Canadian-born graduates. I also apply machine-learning methods to economic forecasting.</p>
+        <p class="lede">I am a research assistant to Guido Matias Cortes (York University) and Kelly Foley (University of Saskatchewan). Before starting graduate study in economics, I spent more than ten years in hotel management in Vietnam, most recently as Managing Director of Sala Hotel Group.</p>
+      </div>
+
+      <dl class="frontmatter">
+        <div>
+          <dt>JEL codes</dt>
+          <dd class="codes">
+            <abbr title="Economics of Minorities, Races, Indigenous Peoples, and Immigrants; Non-labor Discrimination">J15</abbr>
+            <abbr title="Wage Level and Structure; Wage Differentials">J31</abbr>
+            <abbr title="Geographic Labor Mobility; Immigrant Workers">J61</abbr>
+            <abbr title="Returns to Education">I26</abbr>
+          </dd>
+        </div>
+        <div>
+          <dt>Keywords</dt>
+          <dd class="keywords">immigration, wage gaps, returns to education, earnings inequality, machine learning</dd>
+        </div>
+      </dl>
+
+      <div class="actions">
+        <a class="button button--primary" href="#research">Read my research <span aria-hidden="true">↓</span></a>
+        <a class="button" href="files/cv.pdf" target="_blank" rel="noopener">Download CV <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+
+    <section class="section" id="research" aria-labelledby="research-heading">
+      <div class="section-head">
+        <h2 id="research-heading">Research</h2>
+      </div>
+
+      <div class="section-body">
+        <article class="featured" id="featured" aria-labelledby="t-featured">
+          <div class="featured-meta">
+            <p class="kicker">Featured working paper</p>
+            <span class="status status--review">Under review</span>
+          </div>
+          <h3 id="t-featured">The Immigrant–Native Wage Gap in the Contemporary United States: An Oaxaca–Blinder and Machine Learning Analysis</h3>
+          <p class="authors">with Thanh-Huy Le (Tien Giang University) and Gia Phuc Dao (Simon Fraser University)</p>
+          <p class="summary">This paper measures the wage gap between immigrant and native-born workers in the United States today and decomposes it with the Oaxaca–Blinder method and machine-learning techniques.</p>
+          <p class="venue"><cite>Social Sciences &amp; Humanities Open</cite> · Accepted for presentation at the 20th International Conference of the Thailand Econometrics Society (TES 2027), Chiang Mai, January 2027</p>
+        </article>
+
+        <div class="block">
+          <h3 class="sub">Working papers and work in progress</h3>
+          <ol class="papers">
+            <li class="paper">
+              <h4>Enclaves and Earnings: Ethnic Concentration and the Labor-Market Outcomes of Vietnamese Immigrants</h4>
+              <p class="authors">with Thanh-Huy Le (Tien Giang University)</p>
+              <p class="venue"><span class="status status--draft">Working paper</span></p>
+            </li>
+            <li class="paper">
+              <h4 id="t-wip1">Sheepskin Effects for Immigrants and Canadian-Born</h4>
+              <p class="venue"><span class="status status--wip">In progress</span>Sole-authored MA research project</p>
+              <div class="links">
+                <button type="button" class="toggle" id="toggle-wip1" aria-expanded="false" aria-controls="sum-wip1" aria-describedby="t-wip1">Summary</button>
+              </div>
+              <div class="abstract-text" id="sum-wip1" hidden>
+                <p>Estimates the difference in sheepskin effects between immigrant and Canadian-born students in recent cohorts of postsecondary entrants in Canada: the gap in the earnings return to completing a credential, holding years of schooling constant. Re-examines Ferrer and Riddell (2008) with the Canadian credential directly observed. Proposed data: the Postsecondary Student Information System (PSIS), the T1 Family File (T1FF) and the Longitudinal Immigration Database (IMDB), at a Statistics Canada Research Data Centre.</p>
+              </div>
+            </li>
+            <li class="paper">
+              <h4 id="t-wip2">Weather Impacts on Agricultural Production, Agricultural Commodity Prices and Price Relationships: Evidence from the United States and Europe</h4>
+              <p class="authors">with Minh Tien Phung</p>
+              <p class="venue"><span class="status status--wip">In progress</span>MScFE capstone project, WorldQuant University (proposal stage)</p>
+              <div class="links">
+                <button type="button" class="toggle" id="toggle-wip2" aria-expanded="false" aria-controls="sum-wip2" aria-describedby="t-wip2">Summary</button>
+                <a href="https://github.com/chaupmbn/mscfe-capstone-weather-agri" target="_blank" rel="noopener">Code <span aria-hidden="true">↗</span></a>
+              </div>
+              <div class="abstract-text" id="sum-wip2" hidden>
+                <p>Examines how temperature and precipitation affect crop yields, and tests cointegration, error-correction dynamics and the speed of mean reversion in corn–wheat and soybean oil–rapeseed oil price spreads in the United States and Europe.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <div class="block" id="publications">
+          <h3 class="sub">Journal articles</h3>
+          <ol class="papers">
+            <li class="paper">
+              <h4><a href="https://doi.org/10.21511/im.22(3).2026.20" target="_blank" rel="noopener">Drivers of self-reported destination loyalty intentions in an emerging tourism destination: A PLS-SEM study of tourists in Da Nang, Vietnam</a></h4>
+              <p class="authors">Pham, Q.-T., <strong>Pham, M.-C.</strong><span aria-label="corresponding author">†</span>, &amp; Vo-Thi, Y.-N.</p>
+              <p class="venue"><cite>Innovative Marketing</cite>, 22(3), 321–334 · 2026</p>
+              <div class="links">
+                <a href="https://doi.org/10.21511/im.22(3).2026.20" target="_blank" rel="noopener">DOI <span aria-hidden="true">↗</span></a>
+              </div>
+            </li>
+            <li class="paper">
+              <h4><a href="https://doi.org/10.62985/j.huit_ojs.vol26.no3e.611" target="_blank" rel="noopener">Enhancing perceived value in emerging tourism destinations: The role of destination image, experience, and satisfaction. Insights from Da Nang, Vietnam</a></h4>
+              <p class="authors"><strong>Pham, M.-C.</strong>, Vo-Thi, Y.-N., Mai, T.-O. D. N., Nguyen, A.-Q., Phung, Q.-B., Le-Huu, T.-T., Do-Hoang, L.-N., &amp; Pham, Q.-T.</p>
+              <p class="venue"><cite>HUIT Journal of Science</cite>, 26(3E) · 2026</p>
+              <div class="links">
+                <a href="https://doi.org/10.62985/j.huit_ojs.vol26.no3e.611" target="_blank" rel="noopener">DOI <span aria-hidden="true">↗</span></a>
+              </div>
+            </li>
+            <li class="paper">
+              <h4><a href="https://publications.isods.org/index.php/jdsai/article/view/43" target="_blank" rel="noopener">EconVNNewsBot-2: Enhancing economic news retrieval with retrieval-augmented thoughts for improved question-answering in Vietnam</a></h4>
+              <p class="authors">Nguyen-Le, D.-K., Tran, T. H., <strong>Pham, M.-C.</strong><span aria-label="corresponding author">†</span>, Tu, H. T. H., &amp; Nguyen, T.-C.</p>
+              <p class="venue"><cite>The Journal of Data Science and Artificial Intelligence</cite> · 2025</p>
+              <div class="links">
+                <a href="https://publications.isods.org/index.php/jdsai/article/view/43" target="_blank" rel="noopener">Article <span aria-hidden="true">↗</span></a>
+              </div>
+            </li>
+          </ol>
+          <p class="aside">† Corresponding author.</p>
+        </div>
+
+        <div class="block">
+          <h3 class="sub">Conference proceedings</h3>
+          <ol class="papers">
+            <li class="paper">
+              <h4>Applications of machine learning and data augmentation in CPI forecasting for Vietnam</h4>
+              <p class="authors">Nguyen, D. D., Vo-Thi, D.-T., <strong>Pham, M.-C.</strong>, &amp; Nguyen, P. N.</p>
+              <p class="venue"><span class="status status--award">Best Paper Award</span><cite>Proceedings of the Conference on Applications of Technology, Automation, and Civil Engineering (ATAC 2026)</cite>, Ho Chi Minh City, 20 March 2026</p>
+            </li>
+            <li class="paper">
+              <h4><a href="https://due.udn.vn/vi-vn/combelt-intro/cid/5776" target="_blank" rel="noopener">A hybrid CNN-SVM model augmented with technical indicators for forecasting the Vietnam stock market index</a></h4>
+              <p class="authors"><strong>Pham, M.-C.</strong>, Vo-Thi, D.-T., Vo-Thi, Y.-N., &amp; Pham, Q.-T.</p>
+              <p class="venue"><cite>Proceedings of the International Conference on Management, Business, Economics, Law and Technology (COMBELT 2025)</cite> · 2025</p>
+              <div class="links">
+                <a href="https://due.udn.vn/vi-vn/combelt-intro/cid/5776" target="_blank" rel="noopener">Conference page <span aria-hidden="true">↗</span></a>
+              </div>
+            </li>
+            <li class="paper">
+              <h4><a href="https://atac2024.aiotlab.vn/publications" target="_blank" rel="noopener">EconVNNewsBot: Leveraging question answering system with retrieval-augmented generation and chain-of-thought reasoning for economic news in Vietnam</a></h4>
+              <p class="authors">Nguyen-Le, D.-K., Tran, T. H., <strong>Pham, M.-C.</strong>, Tu, H. T. H., &amp; Nguyen, T.-C.</p>
+              <p class="venue"><cite>Proceedings of the 2024 Conference on Applications of Technology, Automation, and Civil Engineering (ATAC 2024)</cite> · 2025</p>
+              <div class="links">
+                <a href="https://atac2024.aiotlab.vn/publications" target="_blank" rel="noopener">Proceedings <span aria-hidden="true">↗</span></a>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <div class="block">
+          <h3 class="sub">Conference presentations</h3>
+          <ol class="rows">
+            <li class="row">
+              <span class="when">Jan 2027</span>
+              <div class="what">
+                <h4 class="title">20th International Conference of the Thailand Econometrics Society (TES 2027)</h4>
+                <p class="where">Faculty of Economics, Chiang Mai University, Thailand · 6–8 January 2027 (scheduled)</p>
+                <p class="detail"><cite>The Immigrant–Native Wage Gap in the Contemporary United States: An Oaxaca–Blinder and Machine Learning Analysis</cite></p>
+              </div>
+            </li>
+            <li class="row">
+              <span class="when">Aug 2025</span>
+              <div class="what">
+                <h4 class="title">7th Asia Conference on Business and Economic Studies (ACBES 2025)</h4>
+                <p class="where">UEH University, Ho Chi Minh City, Vietnam · Poster</p>
+                <p class="detail"><cite>Adaptive Portfolio Optimization in the Vietnamese Stock Market: A Contextual Multi-Armed Bandit with Markov-Switching Regimes</cite>, with Thien-My Ngo and Dang-Khoa Nguyen-Le</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="teaching" aria-labelledby="teaching-heading">
+      <div class="section-head">
+        <h2 id="teaching-heading">Teaching</h2>
+      </div>
+
+      <div class="section-body">
+        <div class="block">
+          <ol class="rows">
+            <li class="row">
+              <span class="when">Fall 2026</span>
+              <div class="what">
+                <h3 class="title">ECON 801: Macroeconomic Theory</h3>
+                <p class="where">Teaching assistant · Graduate · for A/Prof. Enchuan Shao</p>
+              </div>
+            </li>
+            <li class="row">
+              <span class="when">Fall 2026</span>
+              <div class="what">
+                <h3 class="title">ECON 800: Microeconomic Theory</h3>
+                <p class="where">Teaching assistant · Graduate · for Prof. Jingang Zhao</p>
+              </div>
+            </li>
+            <li class="row">
+              <span class="when">Winter 2026</span>
+              <div class="what">
+                <h3 class="title">ECON 304: Introduction to Empirical Economics</h3>
+                <p class="where">Teaching assistant · Undergraduate · for A/Prof. Kelly Foley</p>
+                <p class="detail">Graded assignments; led weekly lab and theory help sessions.</p>
+              </div>
+            </li>
+            <li class="row">
+              <span class="when">Fall 2025</span>
+              <div class="what">
+                <h3 class="title">ECON 111: Introductory Microeconomics</h3>
+                <p class="where">Teaching assistant · Undergraduate</p>
+                <p class="detail">Graded assignments; held regular help sessions for first- and second-year students.</p>
+              </div>
+            </li>
+          </ol>
+          <p class="aside">All courses in the Department of Economics, University of Saskatchewan.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="cv" aria-labelledby="cv-heading">
+      <div class="section-head">
+        <h2 id="cv-heading">CV</h2>
+        <a class="head-link" href="files/cv.pdf" target="_blank" rel="noopener">Full CV (PDF) <span aria-hidden="true">↗</span></a>
+      </div>
+
+      <div class="section-body">
+        <div class="block">
+          <h3 class="sub">Education</h3>
+          <ol class="rows">
+            <li class="row">
+              <span class="when">2025–2027</span>
+              <div class="what">
+                <h4 class="title">MA in Economics</h4>
+                <p class="where">University of Saskatchewan, Saskatoon, Canada · Expected 2027</p>
+                <p class="detail">GPA 94.25%; all coursework completed.</p>
+              </div>
+            </li>
+            <li class="row">
+              <span class="when">2025–2027</span>
+              <div class="what">
+                <h4 class="title">MSc in Financial Engineering</h4>
+                <p class="where">WorldQuant University, Washington, DC, USA · Expected 2027</p>
+                <p class="detail">GPA 94%; 9 of 10 courses completed.</p>
+              </div>
+            </li>
+            <li class="row">
+              <span class="when">2022–2024</span>
+              <div class="what">
+                <h4 class="title">MBA</h4>
+                <p class="where">FPT School of Business and Technology, FPT University, Hanoi, Vietnam</p>
+                <p class="detail">GPA 8.80 / 10.</p>
+              </div>
+            </li>
+            <li class="row">
+              <span class="when">2010–2014</span>
+              <div class="what">
+                <h4 class="title">BA in Economics (Mathematical Finance)</h4>
+                <p class="where">National Economics University, Hanoi, Vietnam</p>
+                <p class="detail">GPA 7.86 / 10.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <div class="block">
+          <h3 class="sub">Research experience</h3>
+          <ol class="rows">
+            <li class="row">
+              <span class="when">2026–now</span>
+              <div class="what">
+                <h4 class="title">Research Assistant</h4>
+                <p class="where">A/Prof. Guido Matias Cortes, York University · A/Prof. Kelly Foley, University of Saskatchewan</p>
+                <p class="detail">Projects: <cite>Who Enrolls in Post-Secondary Education During Recessions?</cite> and <cite>Post-Secondary-Education Institutions and Earnings Inequality</cite>. Data cleaning, sample construction and regression analysis.</p>
+              </div>
+            </li>
+            <li class="row">
+              <span class="when">2024–now</span>
+              <div class="what">
+                <h4 class="title">AI Lab, AI VIET NAM</h4>
+                <p class="detail">Research collaboration on machine-learning applications in economics and finance.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <div class="block">
+          <h3 class="sub">Honors, awards and grants</h3>
+          <ol class="rows">
+            <li class="row">
+              <span class="when">2026</span>
+              <div class="what">
+                <h4 class="title">Best Paper Award</h4>
+                <p class="where">ATAC 2026, Ho Chi Minh City</p>
+                <p class="detail">For <cite>Applications of Machine Learning and Data Augmentation in CPI Forecasting for Vietnam</cite>.</p>
+              </div>
+            </li>
+            <li class="row">
+              <span class="when">2026</span>
+              <div class="what">
+                <h4 class="title">Travel Grant, Cornell University</h4>
+                <p class="where">Summer School in Research Reproducibility, 2026 CEA Meetings, Vancouver</p>
+              </div>
+            </li>
+            <li class="row">
+              <span class="when">2026</span>
+              <div class="what">
+                <h4 class="title">Dr. Krishan Lal and Sunita Lal Graduate Award in Economics</h4>
+                <p class="where">University of Saskatchewan</p>
+              </div>
+            </li>
+            <li class="row">
+              <span class="when">2025</span>
+              <div class="what">
+                <h4 class="title">Graduate Scholarship</h4>
+                <p class="where">Department of Economics, University of Saskatchewan</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <div class="block">
+          <h3 class="sub">Industry and professional experience</h3>
+          <ol class="rows">
+            <li class="row">
+              <span class="when">2022–2025</span>
+              <div class="what">
+                <h4 class="title">Managing Director, Sala Hotel Group</h4>
+                <p class="where">Da Nang, Vietnam</p>
+                <p class="detail">Led a portfolio of four hotels (630 keys) and a beach club restaurant with more than 1,000 seats, including a new 4-star hotel project in Quy Nhon.</p>
+              </div>
+            </li>
+            <li class="row">
+              <span class="when">2021–2024</span>
+              <div class="what">
+                <h4 class="title">Independent Member, Board of Directors, Kim Tin Group</h4>
+                <p class="where">Ho Chi Minh City, Vietnam</p>
+                <p class="detail">Chaired the Audit Committee, overseeing internal controls, risk management and audit processes.</p>
+              </div>
+            </li>
+            <li class="row">
+              <span class="when">2014–2021</span>
+              <div class="what">
+                <h4 class="title">Operations Manager, Diamond Sea Hotel</h4>
+                <p class="where">Da Nang, Vietnam</p>
+                <p class="detail">Led the pre-opening team and managed all operations of a 4-star, 126-room hotel; earlier Assistant to the General Manager (2014–2016).</p>
+              </div>
+            </li>
+            <li class="row">
+              <span class="when">2019</span>
+              <div class="what">
+                <h4 class="title">Freelance Consultant, Hotel Operations and Marketing</h4>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <div class="block">
+          <h3 class="sub">Skills and service</h3>
+          <dl class="rows">
+            <div class="row">
+              <dt class="key">Programming</dt>
+              <dd class="line">Python, Stata and LaTeX (proficient); MATLAB (familiar)</dd>
+            </div>
+            <div class="row">
+              <dt class="key">Software</dt>
+              <dd class="line">Excel (financial modelling, dashboards, pivot tables)</dd>
+            </div>
+            <div class="row">
+              <dt class="key">Methods</dt>
+              <dd class="line">Regression, panel-data and time-series analysis; Oaxaca–Blinder decomposition; machine-learning forecasting</dd>
+            </div>
+            <div class="row">
+              <dt class="key">Languages</dt>
+              <dd class="line">Vietnamese (native), English (fluent)</dd>
+            </div>
+            <div class="row">
+              <dt class="key">Service</dt>
+              <dd class="line">Budget and Finance Committee, Graduate Students' Association, University of Saskatchewan (2025–now)</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact" aria-labelledby="contact-heading">
+      <div class="section-head">
+        <h2 id="contact-heading">Contact</h2>
+      </div>
+
+      <div class="contact-main">
+        <p class="lede">Email is the best way to reach me.</p>
+        <div class="email-row">
+          <span class="email" id="email-text">wzy571@usask.ca</span>
+          <button type="button" class="copy" id="copy-email" data-copy="wzy571@usask.ca">Copy</button>
+        </div>
+        <p class="where">Personal: <a href="mailto:chaupm.bn@gmail.com">chaupm.bn@gmail.com</a></p>
+        <p class="where">Department of Economics, University of Saskatchewan, Saskatoon, SK, Canada</p>
+      </div>
+
+      <div class="references">
+        <h3 class="sub">References</h3>
+        <ul class="people">
+          <li class="person">
+            <p class="title">Kelly Foley</p>
+            <p class="where">Associate Professor of Economics</p>
+            <a href="mailto:kelly.foley@usask.ca">kelly.foley@usask.ca</a>
+          </li>
+          <li class="person">
+            <p class="title">Andreas Pollak</p>
+            <p class="where">Associate Professor of Economics</p>
+            <a href="mailto:a.pollak@usask.ca">a.pollak@usask.ca</a>
+          </li>
+          <li class="person">
+            <p class="title">Enchuan Shao</p>
+            <p class="where">Associate Professor of Economics</p>
+            <a href="mailto:enchuan.shao@usask.ca">enchuan.shao@usask.ca</a>
+          </li>
+          <li class="person">
+            <p class="title">Jingang Zhao</p>
+            <p class="where">Professor of Economics</p>
+            <a href="mailto:j.zhao@usask.ca">j.zhao@usask.ca</a>
+          </li>
+        </ul>
+        <p class="aside">All references are in the Department of Economics, University of Saskatchewan.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Minh-Chau (James) Pham</p>
+    <p>This version: October 2026</p>
+    <a href="#about">Back to top <span aria-hidden="true">↑</span></a>
+  </footer>
+</div>
+
+<script>
+(() => {
+  // Summaries open and close in place
+  document.querySelectorAll('.toggle[aria-controls]').forEach((button) => {
+    const panel = document.getElementById(button.getAttribute('aria-controls'));
+    if (!panel) return;
+    button.addEventListener('click', () => {
+      const open = button.getAttribute('aria-expanded') === 'true';
+      button.setAttribute('aria-expanded', String(!open));
+      panel.hidden = open;
+    });
+  });
+
+  // Copy the email address, or select it where the clipboard is refused
+  const copyButton = document.getElementById('copy-email');
+  const emailText = document.getElementById('email-text');
+  let copyTimer;
+  const settle = (text) => {
+    copyButton.textContent = text;
+    clearTimeout(copyTimer);
+    copyTimer = setTimeout(() => { copyButton.textContent = 'Copy'; }, 1800);
+  };
+  const selectEmail = () => {
+    const range = document.createRange();
+    range.selectNodeContents(emailText);
+    const selection = window.getSelection();
+    selection.removeAllRanges();
+    selection.addRange(range);
+    settle('Selected');
+  };
+  copyButton.addEventListener('click', () => {
+    if (!navigator.clipboard || !navigator.clipboard.writeText) {
+      selectEmail();
+      return;
+    }
+    navigator.clipboard.writeText(copyButton.dataset.copy).then(() => settle('Copied'), selectEmail);
+  });
+
+  // Mark the section being read in both navigations
+  const navLinks = [...document.querySelectorAll('.toc a, .topnav a')];
+  const sections = [...new Set(navLinks.map((a) => a.getAttribute('href')))]
+    .map((hash) => document.querySelector(hash))
+    .filter(Boolean);
+  const mark = (id) => {
+    navLinks.forEach((a) => {
+      if (a.getAttribute('href') === `#${id}`) a.setAttribute('aria-current', 'true');
+      else a.removeAttribute('aria-current');
+    });
+  };
+  // Reads scroll position directly: inside an embedding frame IntersectionObserver ignores rootMargin
+  const update = () => {
+    if (!sections.length) return;
+    const readingLine = window.innerHeight * 0.4;
+    const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
+    let current = sections[0];
+    sections.forEach((section) => {
+      if (section.getBoundingClientRect().top <= readingLine) current = section;
+    });
+    mark((atBottom ? sections[sections.length - 1] : current).id);
+  };
+  let queued = false;
+  window.addEventListener('scroll', () => {
+    if (queued) return;
+    queued = true;
+    requestAnimationFrame(() => {
+      queued = false;
+      update();
+    });
+  }, { passive: true });
+  window.addEventListener('resize', update);
+  window.addEventListener('load', update);
+  update();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+# CV source and LaTeX build files stay local; only files/cv.pdf is published
+*.tex
+*.aux
+*.log
+*.out
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+.DS_Store
+
+# Original photo stays local; the site uses the cropped images/portrait.jpg
+66.jpeg
